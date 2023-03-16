@@ -1,4 +1,9 @@
 def is_comprime(a,b):
+    pow2 = [2,4,8]
+    if(a in pow2 and b%2!=0):
+        return True
+    if(b in pow2 and a%2!=0):
+        return True
     if(a<b):
         a,b = b,a
     if(a == b or (a==1 or b==1) or a%b==0):
