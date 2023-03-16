@@ -1,8 +1,10 @@
 def is_comprime(a,b):
     if(a<b):
         a,b = b,a
-    if(a == b or (a==1 or b==1) or a%b==0):
+    if(a == b or a%b==0):
         return False
+    if(a==1 or b==1):
+        return True
     while(a%b != 0):
         a = a % b
         if(a<b): a,b = b,a
