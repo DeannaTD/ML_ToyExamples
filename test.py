@@ -15,4 +15,4 @@ for i in range(len(a)-1, -1, -1):
     s = shiftSum(a[i], b[i], s)
     if(s): c += 1
 
-print(c+1)
+print(c)
