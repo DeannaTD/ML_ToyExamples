@@ -1,18 +1,18 @@
-def is_comprime(a,b):
-    if(a<b):
-        a,b = b,a
-    if(a==1 or b==1):
-        return True
-    if(a == b or a%b==0):
-        return False
-    while(a%b != 0):
-        a = a % b
-        if(a<b):
-            a,b = b,a
-    return b == 1
+def shiftSum(a, b, s):
+    if(a == '1' and b == '1'): return True
+    if(a == '0' and b == '0'): return False
+    return s
 
-a, b = map(int, input().split())
-if(is_comprime(a,b)):
-    print("YES")
-else:
-    print("NO")
+a, b = input().split()
+s = False
+c = 0
+if(len(a) > len(b)):
+    b = b.zfill(len(a))
+elif(len(b) > len(a)):
+    a = a.zfill(len(b))
+
+for i in range(len(a)-1, -1, -1):
+    s = shiftSum(a[i], b[i], s)
+    if(s): c += 1
+
+print(c+1)
