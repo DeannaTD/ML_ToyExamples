@@ -1,18 +1,14 @@
-def shiftSum(a, b, s):
-    if(a == '1' and b == '1'): return True
-    if(a == '0' and b == '0'): return False
-    return s
+def Election(x,y,z):
+    if(x + y + z > 1):
+        return 1
+    else:
+        return 0
 
-a, b = input().split()
-s = False
-c = 0
-if(len(a) > len(b)):
-    b = b.zfill(len(a))
-elif(len(b) > len(a)):
-    a = a.zfill(len(b))
+N = int(input())
+a = []
+for i in range(N):
+    x,y,z = map(int, input().split())
+    a.append(Election(x,y,z))
 
-for i in range(len(a)-1, -1, -1):
-    s = shiftSum(a[i], b[i], s)
-    if(s): c += 1
-
-print(c)
+for i in a:
+    print(i)
