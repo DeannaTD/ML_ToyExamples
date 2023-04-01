@@ -18,5 +18,5 @@ for a in A:
         ans = a
         mz = zeroes
     elif(zeroes == mz):
-        ans = min(ans, a)
+        ans = str(min(int(ans), int(a)))
 print(ans)
