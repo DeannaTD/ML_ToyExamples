@@ -1,14 +1,22 @@
-def Nor(x,y):
-    if (x == 0 and y == 0):
-        return 1
-    return 0
-
-
 N = int(input())
-a = []
-for i in range(N):
-    x,y = map(int, input().split())
-    a.append(Nor(x,y))
+A = []
 
-for i in a:
-    print(i)
+for i in range(N):
+    A.append(input())
+
+ans = 2**63
+mz = 0
+
+for a in A:
+    zeroes = 0
+    for i in range(len(a) - 1, -1, -1):
+        if(a[i] == '0'):
+            zeroes += 1
+        else: 
+            break
+    if(zeroes > mz):
+        ans = a
+        mz = zeroes
+    elif(zeroes == mz):
+        ans = min(ans, a)
+print(ans)
