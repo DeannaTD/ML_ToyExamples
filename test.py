@@ -1,22 +1,13 @@
-N = int(input())
+import random
+
+N, X = map(int, input().split())
 A = []
-
+ans = []
 for i in range(N):
-    A.append(input())
+    A.append(random.randint(0, 5))
+    if(A[i] == X):
+        ans.append(i)
 
-ans = 2**63
-mz = 0
-
-for a in A:
-    zeroes = 0
-    for i in range(len(a) - 1, -1, -1):
-        if(a[i] == '0'):
-            zeroes += 1
-        else: 
-            break
-    if(zeroes > mz):
-        ans = a
-        mz = zeroes
-    elif(zeroes == mz):
-        ans = str(min(int(ans), int(a)))
-print(ans)
+print(" ".join(map(str, A)))
+for a in ans:
+    print(a)
