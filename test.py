@@ -1,8 +1,8 @@
-numbers = map(int, input().split())
+import math
+numbers = map(float, input().split())
+s = sum(numbers)
 
-res = 0
-
-for n in numbers:
-    res += n
-
-print(res)
+if s == math.floor(s):
+    print(int(s))
+else: 
+    print(s)
