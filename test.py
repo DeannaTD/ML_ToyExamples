@@ -13,12 +13,20 @@ for i in range(N):
 
 printArray(arr)
 
-f = False
+inds = []
+
 for i in range(N):
+    if(i in inds):
+        continue
     if (arr.count(arr[i]) > 1):
-        if(not f):
-            print("YES")
-            f = True
-        print(i)
-if(not f):
+        for j in range(i, N):
+            if(arr[i] == arr[j]):
+                inds.append(j)
+
+if(len(inds) == 0):
     print("NO")
+else:
+    print("YES")
+
+for ind in inds:
+    print(ind)
