@@ -1,5 +1,2 @@
-s = input()
-words = s.split(' ')
-word = max(words, key=len)
-print(word)
-print(len(word))
+S, N, P = input().split()
+print("%s.%s. %s" % (N[0], P[0], S))
