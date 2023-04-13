@@ -14,9 +14,6 @@ for c in s:
     elif(c != ' '):
         word += c
 
-i = 0
-for j in range(len(words)):
-    if(len(words[i]) < len(words[j])):
-        i = j
-print(words[i])
-print(len(words[i]))
+mw = max(words, key=len)
+print(mw)
+print(len(mw))
