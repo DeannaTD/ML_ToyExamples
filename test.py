@@ -1,14 +1,17 @@
 number = int(input())
 
-for n in range(1, number + 1):
+def div(n):
     s_n = str(n)
-    div = True
     for d in s_n:
         if(d == '0'):
-            div = False
-            break
+            return False
         if(n % int(d) != 0):
-            div = False
-            break
-    if(div):
-        print(n)
+            return False
+    return True
+
+for n in range(1, number):
+    if(div(n)):
+        print(n, end=" ")
+
+if(div(number)):
+    print(number)
