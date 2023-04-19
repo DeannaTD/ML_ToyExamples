@@ -9,9 +9,9 @@ def div(n):
             return False
     return True
 
-for n in range(1, number):
-    if(div(n)):
-        print(n, end=" ")
+if(number != 0):
+    print("1", end="")
 
-if(div(number)):
-    print(number)
+for n in range(2, number+1):
+    if(div(n)):
+        print("", n, end="")
