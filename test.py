@@ -2,9 +2,9 @@ number = int(input())
 
 def div(n):
     s_n = str(n)
+    if('0' in s_n):
+        return False
     for d in s_n:
-        if(d == '0'):
-            return False
         if(n % int(d) != 0):
             return False
     return True
