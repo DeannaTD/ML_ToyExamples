@@ -1,8 +1,14 @@
-k = int(input())
 s = input()
+sign = ""
+t = []
+if(s.__contains__("+")):
+    sign = "+"
+    t = s.split("+")
+else:
+    sign = "-"
+    t = s.split("-")
 
-if(k<0):
-    s = s[::-1]
-    k *= -1
-    
-print(s * k)
+if(sign == "+"):
+    print(int(t[0]) + int(t[1]))
+else:
+    print(int(t[0]) - int(t[1]))
