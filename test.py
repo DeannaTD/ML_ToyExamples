@@ -1,4 +1,4 @@
-N = input()
+N = str(int(input()))
 if(len(N) % 2 == 1):
     print("unlucky")
 else:
