@@ -1,9 +1,15 @@
-N = str(int(input()))
-if(len(N) % 2 == 1):
-    print("unlucky")
+s = input()
+
+lengths = []
+prev = s[0]
+cl = 1
+for i in range(1, len(s)):
+    if(s[i] == prev):
+        lengths.append(cl)
+        cl = 0
+    prev = s[i]
+    cl += 1
 else:
-    m = len(N) // 2
-    if(sum(map(int, N[:m])) == sum(map(int, N[m:]))):
-        print("lucky")
-    else:
-        print("unlucky")
+    lengths.append(cl)
+
+print(max(lengths))
